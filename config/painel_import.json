@@ -1,14 +1,14 @@
 {
 	"css":[
-		"http://localhost/proj-jp/lib/bootstrap-3.3.6/css/bootstrap.min.css"
+		"http://localhost/construtor-de-site/lib/bootstrap-3.3.6/css/bootstrap.min.css"
 	],
 
 	"js":[
-		"http://localhost/proj-jp/lib/jquery/jquery-2.2.3.min.js",
-		"http://localhost/proj-jp/lib/bootstrap-3.3.6/js/bootstrap.min.js",
-		"http://localhost/proj-jp/lib/angular/angular.min.js",
-		"http://localhost/proj-jp/public/js/painel_modules.js",
-		"http://localhost/proj-jp/public/js/painel_directives.js",
-		"http://localhost/proj-jp/public/js/painel_controllers.js"
+		"http://localhost/construtor-de-site/lib/jquery/jquery-2.2.3.min.js",
+		"http://localhost/construtor-de-site/lib/bootstrap-3.3.6/js/bootstrap.min.js",
+		"http://localhost/construtor-de-site/lib/angular/angular.min.js",
+		"http://localhost/construtor-de-site/public/js/painel_modules.js",
+		"http://localhost/construtor-de-site/public/js/painel_directives.js",
+		"http://localhost/construtor-de-site/public/js/painel_controllers.js"
 	]
 }

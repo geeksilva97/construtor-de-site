@@ -39,7 +39,7 @@ admPanel.controller("linksController", function($scope, $http){
 
 		var id_link = event.target.getAttribute('data-id');
 
-		$http.get("http://"+host+"/construtor-de-site/app/http/ajax_request.php?action=enable-link&id-link="+id_link).success(function(data){
+		$http.get("http://"+host+"/proj-jp/app/http/ajax_request.php?action=enable-link&id-link="+id_link).success(function(data){
 			if(data == 1){
 				// alert("Link habilitado com com sucesso!");
 				$scope.load_enabled_links();
@@ -54,7 +54,7 @@ admPanel.controller("linksController", function($scope, $http){
 
 		var id_link = event.target.getAttribute('data-id');
 
-		$http.get("http://"+host+"/construtor-de-site/app/http/ajax_request.php?action=disable-link&id-link="+id_link).success(function(data){
+		$http.get("http://"+host+"/proj-jp/app/http/ajax_request.php?action=disable-link&id-link="+id_link).success(function(data){
 			if(data == 1){
 				// alert("Link desabilitado com sucesso!");
 				$scope.load_disabled_links();
@@ -81,7 +81,7 @@ admPanel.controller("noticiasController", function($scope, $http){
 
 
 	$scope.load_enabled_notices=function(){
-		$http.get("http://"+host+"/construtor-de-site/app/http/ajax_request.php?action=load-enabled-notices").success(function(data){
+		$http.get("http://"+host+"/proj-jp/app/http/ajax_request.php?action=load-enabled-notices").success(function(data){
 			$scope.enabled_notices=[];
 			for (var i = 0; i < data.length; i++) {
 				$scope.enabled_notices.push(data[i]);
@@ -90,7 +90,7 @@ admPanel.controller("noticiasController", function($scope, $http){
 	};
 
 	$scope.load_disabled_notices=function(){
-		$http.get("http://"+host+"/construtor-de-site/app/http/ajax_request.php?action=load-disabled-notices").success(function(data){
+		$http.get("http://"+host+"/proj-jp/app/http/ajax_request.php?action=load-disabled-notices").success(function(data){
 			$scope.disabled_notices=[];
 			for (var i = 0; i < data.length; i++) {
 				$scope.disabled_notices.push(data[i]);
@@ -101,7 +101,7 @@ admPanel.controller("noticiasController", function($scope, $http){
 
 	$scope.disable=function(event){
 		var id = event.target.getAttribute('data-id');
-			$http.get("http://"+host+"/construtor-de-site/app/http/ajax_request.php?action=disable-notice&id_notice="+id).success(function(data){
+			$http.get("http://"+host+"/proj-jp/app/http/ajax_request.php?action=disable-notice&id_notice="+id).success(function(data){
 				$scope.load_enabled_notices();
 				$scope.load_disabled_notices();
 			});
@@ -109,7 +109,7 @@ admPanel.controller("noticiasController", function($scope, $http){
 
 	$scope.enable=function(event){
 		var id =  event.target.getAttribute('data-id');
-		$http.get("http://"+host+"/construtor-de-site/app/http/ajax_request.php?action=enable-notice&id_notice="+id).success(function(data){
+		$http.get("http://"+host+"/proj-jp/app/http/ajax_request.php?action=enable-notice&id_notice="+id).success(function(data){
 				$scope.load_enabled_notices();
 				$scope.load_disabled_notices();
 			});
@@ -117,14 +117,14 @@ admPanel.controller("noticiasController", function($scope, $http){
 
 	$scope.delete=function(event){
 		var id =  event.target.getAttribute('data-id');
-		$http.get("http://"+host+"/construtor-de-site/app/http/ajax_request.php?action=delete-notice&id_notice="+id).success(function(data){
+		$http.get("http://"+host+"/proj-jp/app/http/ajax_request.php?action=delete-notice&id_notice="+id).success(function(data){
 				// $scope.load_enabled_notices();
 				$scope.load_disabled_notices();
 			});
 	};
 
 	$scope.add_notice=function(noticia){
-		$http.get("http://"+host+"/construtor-de-site/app/http/ajax_request.php?action=add-noticia&titulo="+noticia.titulo+"&conteudo="+noticia.conteudo).success(function(data){
+		$http.get("http://"+host+"/proj-jp/app/http/ajax_request.php?action=add-noticia&titulo="+noticia.titulo+"&conteudo="+noticia.conteudo).success(function(data){
 			if(data == 1){
 				$scope.load_enabled_notices();
 			}
@@ -151,7 +151,7 @@ admPanel.controller("postController", function($scope, $http){
 
 
 	$scope.load_enabled_posts=function(){
-		$http.get("http://"+host+"/construtor-de-site/app/http/ajax_request.php?action=load-enabled-posts").then(function(response){
+		$http.get("http://"+host+"/proj-jp/app/http/ajax_request.php?action=load-enabled-posts").then(function(response){
 			$scope.enabled_posts=[];
 			for(var i=0; i<response.data.length; i++){
 				$scope.enabled_posts.push(response.data[i]);
@@ -160,7 +160,7 @@ admPanel.controller("postController", function($scope, $http){
 	};
 
 	$scope.load_disabled_posts=function(){
-		$http.get("http://"+host+"/construtor-de-site/app/http/ajax_request.php?action=load-disabled-posts").then(function(response){
+		$http.get("http://"+host+"/proj-jp/app/http/ajax_request.php?action=load-disabled-posts").then(function(response){
 			$scope.disabled_posts=[];
 			for(var i=0; i<response.data.length; i++){
 				$scope.disabled_posts.push(response.data[i]);
@@ -170,7 +170,7 @@ admPanel.controller("postController", function($scope, $http){
 
 	$scope.disable=function(event){
 		var id = event.target.getAttribute('data-id');
-		$http.get("http://"+host+"/construtor-de-site/app/http/ajax_request.php?action=disable-post&id-post="+id).then(function(response){
+		$http.get("http://"+host+"/proj-jp/app/http/ajax_request.php?action=disable-post&id-post="+id).then(function(response){
 			$scope.load_enabled_posts();
 			$scope.load_disabled_posts();
 		});
@@ -178,7 +178,7 @@ admPanel.controller("postController", function($scope, $http){
 
 	$scope.enable=function(event){
 		var id = event.target.getAttribute('data-id');
-		$http.get("http://"+host+"/construtor-de-site/app/http/ajax_request.php?action=enable-post&id-post="+id).then(function(response){
+		$http.get("http://"+host+"/proj-jp/app/http/ajax_request.php?action=enable-post&id-post="+id).then(function(response){
 			$scope.load_enabled_posts();
 			$scope.load_disabled_posts();
 		});
@@ -195,7 +195,7 @@ admPanel.controller("postController", function($scope, $http){
 		var c = (checkBox.checked) ? 1 : 0;
 		str.push('flg_ativo='+c);
 
-		$http.get("http://"+host+"/construtor-de-site/app/http/ajax_request.php?action=add-post&"+str.join('&')).then(function(response){
+		$http.get("http://"+host+"/proj-jp/app/http/ajax_request.php?action=add-post&"+str.join('&')).then(function(response){
 			$scope.load_enabled_posts();
 			$scope.load_disabled_posts();
 			console.log(response.data);
@@ -221,7 +221,7 @@ admPanel.controller("textController", function($scope, $http){
 
 	$scope.load_texts = function(){
 		$scope.texts={};
-		$http.get("http://"+host+"/construtor-de-site/app/http/ajax_request.php?action=load-texts").then(function(response){
+		$http.get("http://"+host+"/proj-jp/app/http/ajax_request.php?action=load-texts").then(function(response){
 			$scope.texts=response.data;
 			console.log(response.data);
 		});	
@@ -229,7 +229,7 @@ admPanel.controller("textController", function($scope, $http){
 	};
 
 	$scope.save_text=function(t){
-		$http.get("http://"+host+"/construtor-de-site/app/http/ajax_request.php?action=change-texts&texto_topo="+t.texto_topo).then(function(response){
+		$http.get("http://"+host+"/proj-jp/app/http/ajax_request.php?action=change-texts&texto_topo="+t.texto_topo).then(function(response){
 			// $scope.texts=response.data;
 			// $scope.load_texts();
 			console.log(response.data);
