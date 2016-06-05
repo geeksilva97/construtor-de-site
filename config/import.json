@@ -1,0 +1,12 @@
+{
+	"css":[
+		"http://localhost/proj-jp/lib/slick-1.6.0/slick/slick.css",
+		"http://localhost/proj-jp/public/css/estilo.css"
+	],
+
+	"js":[
+		"http://localhost/proj-jp/lib/jquery/jquery-2.2.3.min.js",
+		"http://localhost/proj-jp/lib/slick-1.6.0/slick/slick.min.js",
+		"http://localhost/proj-jp/public/js/script.js"
+	]
+}

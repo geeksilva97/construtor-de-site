@@ -1,0 +1,1 @@
+var admPanel = angular.module("admPanel", []);

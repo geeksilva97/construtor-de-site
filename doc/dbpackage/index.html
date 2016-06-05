@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DBPackage | Modulo Banco de dados</title>
+	<meta charset="utf-8" />
+
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../css/theme.css">
+
+</head>
+<body>
+
+<header class="col-md-12">
+	<h2>DBPackage</h2>
+</header>
+
+<div class="col-md-12 main">
+	<p>Pacote de classe nativo do <strong>PKD</strong> que dá uma maior facilidade em manipulação de banco de dados.</p>
+
+	<ul class="list">
+		<li class="active">
+			<a href="#">Conectando com o banco de dados</a>
+			<div>
+				Drive::set('mysql');<br />
+				$conn = Drive::getConnection(string $host, string $dbname, string $user, string $pass);<br>
+				$conn->close();
+			</div>
+		</li>
+
+		<li>
+			<a href="#">Realizando consulta de forma direta</a>
+			<div>
+				<pre>
+Drive::set('mysql');
+$conn = Drive::getConnection(string $host, string $dbname, string $user, string $pass);
+
+$stmt = $conn->prepareStatement("INSTUÇÃO SQL");
+$stmt->execute([array $values]);
+
+$conn->close();
+				</pre>
+			</div>
+		</li>
+
+		<li class="active">
+			<a href="#">A classe <strong>SqlInsert</strong>, para inserir dados</a>
+
+			<div>
+<pre>
+Drive::set('mysql');
+$conn = Drive::getConnection(string $host, string $dbname, string $user, string $pass);
+
+	$insert = new SqlInsert;
+	$insert->setTable('table');
+	$insert->setRowData('key', 'value');
+
+	$insert->execute($conn);
+
+$conn->close();
+</pre>
+			</div>
+
+		</li>
+
+		<li>
+			<a href="#">A classe <strong>SqlUpdate</strong>, para atualizar dados</a>
+			<div>
+<pre>
+Drive::set('mysql');
+$conn = Drive::getConnection(string $host, string $dbname, string $user, string $pass);
+
+	$insert = new SqlInsert;
+	$insert->setTable('table');
+	$insert->setRowData('key', 'value');
+
+	$insert->execute($conn);
+
+$conn->close();
+</pre>
+			</div>
+		</li>
+
+		<li class="active">
+			<a href="#">A classe <strong>SqlDelete</strong>, para deletar dados</a>
+			<div>
+<pre>
+Drive::set('mysql');
+$conn = Drive::getConnection(string $host, string $dbname, string $user, string $pass);
+
+	$insert = new SqlInsert;
+	$insert->setTable('table');
+	$insert->setRowData('key', 'value');
+
+	$insert->execute($conn);
+
+$conn->close();
+</pre>
+			</div>
+		</li>
+
+		<li>
+			<a href="#">A classe <strong>SqlSelect</strong>, para consultar dados</a>
+			<div>
+<pre>
+Drive::set('mysql');
+$conn = Drive::getConnection(string $host, string $dbname, string $user, string $pass);
+
+	$insert = new SqlInsert;
+	$insert->setTable('table');
+	$insert->setRowData('key', 'value');
+
+	$insert->execute($conn);
+
+$conn->close();
+</pre>
+			</div>
+		</li>
+	</ul>
+</div>
+
+<!--<a href="javascript:history.back()">Voltar</a>-->
+
+</body>
+</html>
