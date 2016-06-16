@@ -6,6 +6,7 @@ Route::set('imagens', 'imagens.view');
 Route::set('posts', 'posts.view');
 Route::set('noticias', 'noticias.view');
 Route::set('links', 'links.view');
+Route::set('nova-pagina', 'nova-pagina.view');
 Route::set('error', 'error.view');
 
 $url = (isset($_GET['url'])) ? $_GET['url'] : '';
